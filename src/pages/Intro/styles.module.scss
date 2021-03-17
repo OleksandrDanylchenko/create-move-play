@@ -1,10 +1,40 @@
+@import "../../styles/toRemConverter";
+
 .container {
-  height: 180vh;
+  height: 100vh;
   background-image: linear-gradient(to right bottom, #00fecc, #00f0e5, #00dff5, #00cdfa, #33baf4);
   font-variation-settings: 'serf' 10;
 }
 
 .info {
-  padding-left: 2rem;
-  padding-top: 2rem;
+  padding: rem(40px);
+}
+
+.header {
+  font-size: rem(22px);
+  line-height: rem(55px);
+
+  h1 {
+    font-weight: 800;
+  }
+}
+
+.section {
+  font-size: rem(25px);
+  line-height: rem(40px);
+}
+
+.joinButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: rem(16px);
+  margin-top: rem(50px);
+  font-size: rem(25px);
+  font-weight: 600;
+  border: solid black rem(2px);
+  border-radius: rem(10px);
+
 }
