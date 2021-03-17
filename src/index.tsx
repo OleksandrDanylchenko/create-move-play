@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './styles/fonts/fonts.scss';
 import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css';
 import 'normalize.css';
 
 ReactDOM.render(
