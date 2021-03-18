@@ -2,12 +2,30 @@ import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import {
+  introButtonVariants,
+  introHeaderVariants,
+  introSectionVariants
+} from './framerMotionAnimations';
 
 const IntroView: FunctionComponent = () => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={styles.container}
+    >
       <article className={styles.info}>
-        <header className={styles.header}>
+        <motion.header
+          initial={'initial'}
+          animate={'in'}
+          exit={'out'}
+          variants={introHeaderVariants}
+          className={styles.header}
+        >
           <h1>
             Створюй.
             <br />
@@ -15,19 +33,33 @@ const IntroView: FunctionComponent = () => {
             <br />
             Грай.
           </h1>
-        </header>
-        <section className={styles.section}>
+        </motion.header>
+        <motion.section
+          initial={'initial'}
+          animate={'in'}
+          exit={'out'}
+          variants={introSectionVariants}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className={styles.section}
+        >
           <p>
             Приєднуйся до нас,
             <br />
             виконуй вправи та вигравай цінні призи
           </p>
-        </section>
-        <button className={styles.joinButton}>
+        </motion.section>
+        <motion.button
+          initial={'initial'}
+          animate={'in'}
+          exit={'out'}
+          whileTap={'onTap'}
+          variants={introButtonVariants}
+          className={styles.joinButton}
+        >
           Приєднатися <FontAwesomeIcon icon={faChevronCircleRight} />
-        </button>
+        </motion.button>
       </article>
-    </div>
+    </motion.div>
   );
 };
 
