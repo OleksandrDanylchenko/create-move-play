@@ -16,7 +16,7 @@ const ExercisesContainer: FunctionComponent<ExercisesContainerProps> = ({
     const filteredExercises = exercises.filter(
       (exercise) =>
         !exercise.incompatibleDiseases.some((disease) =>
-          userAnswers?.diseases.includes(disease)
+          userAnswers?.diseases?.includes(disease)
         )
     );
     setFilteredExercises(filteredExercises);
