@@ -13,9 +13,14 @@ const ExercisesContainer: FunctionComponent<ExercisesContainerProps> = ({
   const [filteredExercises, setFilteredExercises] = useState<IExercise[]>([]);
 
   useEffect(() => {
-    // TODO Add filtering for diseases
-    setFilteredExercises(exercises);
-  }, [exercises]);
+    const filteredExercises = exercises.filter(
+      (exercise) =>
+        !exercise.incompatibleDiseases.some((disease) =>
+          userAnswers?.diseases.includes(disease)
+        )
+    );
+    setFilteredExercises(filteredExercises);
+  }, [exercises, userAnswers?.diseases]);
 
   return <>{userAnswers && <ExercisesView exercises={filteredExercises} />}</>;
 };
