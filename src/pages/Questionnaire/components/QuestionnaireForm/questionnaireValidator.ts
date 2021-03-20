@@ -25,7 +25,8 @@ export const questionnaireSchema = Joi.object()
       .messages({
         'any.only': `Обраний період поки недоступний`,
         'any.required': `Зазначте найзручніший період`
-      })
+      }),
+    diseases: Joi.array().default([]).optional()
   })
   .options({ abortEarly: false });
 
