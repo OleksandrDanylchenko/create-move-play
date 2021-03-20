@@ -51,4 +51,9 @@
   font-weight: 600;
   border: solid black rem(2px);
   border-radius: rem(10px);
+
+  &:disabled {
+    color: #736C6C;
+    border-color: #736C6C;
+  }
 }

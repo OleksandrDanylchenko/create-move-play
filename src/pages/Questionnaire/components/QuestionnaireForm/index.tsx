@@ -34,7 +34,7 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
           <form onSubmit={handleSubmit}>
             <Field<string>
               name={'name'}
-              format={(value) => value.trim()}
+              format={(value) => value?.trim()}
               formatOnBlur={true}
             >
               {({ input, meta }) => (
@@ -135,7 +135,9 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                       : styles.formField
                   }
                 >
-                  <label className={styles.fieldLabel}>Хвороби</label>
+                  <label className={styles.fieldLabel}>
+                    Хвороби<sup>* лише при наявності</sup>
+                  </label>
                   <Select
                     placeholder={false}
                     isSearchable={false}
@@ -158,7 +160,11 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                 </div>
               )}
             </Field>
-            <button type={'submit'} className={styles.submitButton}>
+            <button
+              type={'submit'}
+              disabled={pristine || hasValidationErrors || !!active}
+              className={styles.submitButton}
+            >
               Приєднатися
               <FontAwesomeIcon icon={faChevronCircleRight} />
             </button>
