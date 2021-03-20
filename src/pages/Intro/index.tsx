@@ -8,6 +8,7 @@ import {
   introHeaderVariants,
   introSectionVariants
 } from './framerMotionAnimations';
+import { Link } from 'react-router-dom';
 
 const IntroView: FunctionComponent = () => {
   return (
@@ -48,16 +49,19 @@ const IntroView: FunctionComponent = () => {
             виконуй вправи та вигравай цінні призи
           </p>
         </motion.section>
-        <motion.button
-          initial={'initial'}
-          animate={'in'}
-          exit={'out'}
-          whileTap={'onTap'}
-          variants={introButtonVariants}
-          className={styles.joinButton}
-        >
-          Приєднатися <FontAwesomeIcon icon={faChevronCircleRight} />
-        </motion.button>
+        <Link to={'/questionnaire'} className={styles.joinButtonLink}>
+          <motion.button
+            initial={'initial'}
+            animate={'in'}
+            exit={'out'}
+            whileTap={'onTap'}
+            variants={introButtonVariants}
+            className={styles.joinButton}
+          >
+            Приєднатися
+            <FontAwesomeIcon icon={faChevronCircleRight} />
+          </motion.button>
+        </Link>
       </article>
     </motion.div>
   );

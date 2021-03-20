@@ -24,17 +24,21 @@
   line-height: rem(40px);
 }
 
+.joinButtonLink {
+  text-decoration: none;
+}
+
 .joinButton {
   all: unset;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: rem(500px);
   padding: rem(16px);
   margin-top: rem(50px);
   font-size: rem(25px);
   font-weight: 600;
   border: solid black rem(2px);
   border-radius: rem(10px);
-
 }
