@@ -25,11 +25,11 @@
   line-height: rem(40px);
 }
 
-.joinButtonLink {
+.questionnaireButtonLink {
   text-decoration: none;
 }
 
-.joinButton {
+.questionnaireButton {
   all: unset;
   display: flex;
   align-items: center;
@@ -42,4 +42,5 @@
   font-weight: 600;
   border: solid black rem(2px);
   border-radius: rem(10px);
+  color: black;
 }

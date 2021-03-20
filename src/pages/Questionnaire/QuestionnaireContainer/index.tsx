@@ -1,15 +1,9 @@
 import React, { FunctionComponent, useCallback } from 'react';
 import QuestionnaireView from '../QuestionnaireView';
-
-export interface IUserData {
-  name: string;
-  age: string;
-  diseases: string;
-  preferredDayPeriod: string;
-}
+import { IUserAnswers } from '../../../redux/reducers/user';
 
 const QuestionnaireContainer: FunctionComponent = () => {
-  const onSubmit = useCallback((data: IUserData) => {
+  const onSubmit = useCallback((data: IUserAnswers) => {
     console.log(data);
   }, []);
 

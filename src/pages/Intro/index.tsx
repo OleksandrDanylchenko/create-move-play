@@ -49,14 +49,14 @@ const IntroView: FunctionComponent = () => {
             виконуй вправи та вигравай цінні призи
           </p>
         </motion.section>
-        <Link to={'/questionnaire'} className={styles.joinButtonLink}>
+        <Link to={'/user'} className={styles.questionnaireButtonLink}>
           <motion.button
             initial={'initial'}
             animate={'in'}
             exit={'out'}
             whileTap={'onTap'}
             variants={introButtonVariants}
-            className={styles.joinButton}
+            className={styles.questionnaireButton}
           >
             Пройти опитування
             <FontAwesomeIcon icon={faChevronCircleRight} />

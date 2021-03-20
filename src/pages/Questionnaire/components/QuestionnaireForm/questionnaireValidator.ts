@@ -1,7 +1,7 @@
 import Joi from '@hapi/joi';
-import { IUserData } from '../../QuestionnaireContainer';
 import { ValidationErrors } from 'final-form';
 import { validator } from '../../../../utils/forms-validation.helper';
+import { IUserAnswers } from '../../../../redux/reducers/user';
 
 export const questionnaireSchema = Joi.object()
   .keys({
@@ -32,5 +32,5 @@ export const questionnaireSchema = Joi.object()
   .options({ abortEarly: false });
 
 export const questionnaireValidator = (
-  values: IUserData
+  values: IUserAnswers
 ): ValidationErrors | undefined => validator(values, questionnaireSchema);

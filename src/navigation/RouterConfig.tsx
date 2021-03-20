@@ -22,7 +22,7 @@ const Routing: FunctionComponent = () => {
         />
         <PublicRoute
           exact
-          path="/questionnaire"
+          path="/user"
           title="Пройдіть опитування | Твори.Рухайся.Грай"
           component={QuestionnaireContainer}
         />

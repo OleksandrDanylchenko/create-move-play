@@ -6,12 +6,12 @@ import Select from 'react-select';
 import styles from './styles.module.scss';
 import { questionnaireValidator } from './questionnaireValidator';
 import { IBindingCallback1 } from '../../../../models/callbacks';
-import { IUserData } from '../../QuestionnaireContainer';
 import { diseasesOptions, preferableDayPeriodsOptions } from './selectOptions';
 import { reactSelectorStyles } from './reactSelectStyles';
+import { IUserAnswers } from '../../../../redux/reducers/user';
 
 interface QuestionnaireFormView {
-  onSubmit: IBindingCallback1<IUserData>;
+  onSubmit: IBindingCallback1<IUserAnswers>;
 }
 
 type QuestionnaireFormProps = QuestionnaireFormView;

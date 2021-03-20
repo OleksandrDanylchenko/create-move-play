@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { IBindingCallback1 } from '../../../models/callbacks';
-import { IUserData } from '../QuestionnaireContainer';
 import QuestionnaireFormView from '../components/QuestionnaireForm';
+import { IUserAnswers } from '../../../redux/reducers/user';
 
 interface QuestionnaireView {
-  onSubmit: IBindingCallback1<IUserData>;
+  onSubmit: IBindingCallback1<IUserAnswers>;
 }
 
 type QuestionnaireViewProps = QuestionnaireView;
