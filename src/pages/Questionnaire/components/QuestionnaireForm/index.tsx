@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 import { questionnaireValidator } from './questionnaireValidator';
 import { IBindingCallback1 } from '../../../../models/callbacks';
 import { IUserData } from '../../QuestionnaireContainer';
-import { preferableDayPeriodsOptions } from './selectOptions';
+import { diseasesOptions, preferableDayPeriodsOptions } from './selectOptions';
 import { reactSelectorStyles } from './reactSelectStyles';
 
 interface QuestionnaireFormView {
@@ -117,41 +117,43 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                 </div>
               )}
             </Field>
-            {/*<Field<string[]>*/}
-            {/*  name={'diseases'}*/}
-            {/*  component={'select'}*/}
-            {/*  multiple*/}
-            {/*  options={diseasesOptions}*/}
-            {/*>*/}
-            {/*  {({ input, meta, options }) => (*/}
-            {/*    <div*/}
-            {/*      className={*/}
-            {/*        meta.error && meta.touched*/}
-            {/*          ? styles.formFieldError*/}
-            {/*          : styles.formField*/}
-            {/*      }*/}
-            {/*    >*/}
-            {/*      <label>Хвороби</label>*/}
-            {/*      <select*/}
-            {/*        {...input}*/}
-            {/*        onChange={(event) => {*/}
-            {/*          meta.error && form.resetFieldState('diseases');*/}
-            {/*          input.onChange(event.target.value);*/}
-            {/*        }}*/}
-            {/*        className={styles.fieldInput}*/}
-            {/*      >*/}
-            {/*        {options.map((option: { text: string; value: string }) => (*/}
-            {/*          <option key={option.value} value={option.value}>*/}
-            {/*            {option.text}*/}
-            {/*          </option>*/}
-            {/*        ))}*/}
-            {/*      </select>*/}
-            {/*      {meta.error && meta.touched && (*/}
-            {/*        <span className={styles.fieldError}>{meta.error}</span>*/}
-            {/*      )}*/}
-            {/*    </div>*/}
-            {/*  )}*/}
-            {/*</Field>*/}
+            <Field<string[]>
+              name={'diseases'}
+              component={'select'}
+              multiple
+              options={diseasesOptions}
+            >
+              {({ input, meta, options }) => (
+                <div
+                  className={
+                    meta.error && meta.touched
+                      ? styles.formFieldError
+                      : styles.formField
+                  }
+                >
+                  <label className={styles.fieldLabel}>Хвороби</label>
+                  <Select
+                    placeholder={false}
+                    isSearchable={false}
+                    isMulti
+                    noOptionsMessage={() => 'Інші хвороби поки недоступні'}
+                    onFocus={(event) => input.onFocus(event)}
+                    onBlur={(event) => input.onBlur(event)}
+                    onChange={(event) => {
+                      meta.error && form.resetFieldState('preferredDayPeriod');
+                      console.log(event);
+                      // input.onChange(event?.value);
+                    }}
+                    options={options}
+                    className={styles.fieldInput}
+                    styles={reactSelectorStyles}
+                  />
+                  {meta.error && meta.touched && (
+                    <span className={styles.fieldError}>{meta.error}</span>
+                  )}
+                </div>
+              )}
+            </Field>
             <button type={'submit'} className={styles.submitButton}>
               Приєднатися
               <FontAwesomeIcon icon={faChevronCircleRight} />
