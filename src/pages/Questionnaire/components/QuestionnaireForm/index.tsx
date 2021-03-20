@@ -16,6 +16,12 @@ type QuestionnaireFormProps = QuestionnaireFormView;
 const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
   onSubmit
 }) => {
+  const preferableDayPeriods = [
+    { text: '', value: '' },
+    { text: 'Зранку та в обід', value: 'morningAndDinner' },
+    { text: 'В обід та ввечері', value: 'dinnerAndSupper' }
+  ];
+
   return (
     <>
       <Form
@@ -73,6 +79,44 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                     }}
                     className={styles.fieldInput}
                   />
+                  {meta.error && meta.touched && (
+                    <span className={styles.fieldError}>{meta.error}</span>
+                  )}
+                </div>
+              )}
+            </Field>
+            <Field<string>
+              name={'preferredDayPeriod'}
+              component={'select'}
+              options={preferableDayPeriods}
+            >
+              {({ input, meta, options }) => (
+                <div
+                  className={
+                    meta.error && meta.touched
+                      ? styles.formFieldError
+                      : styles.formField
+                  }
+                >
+                  <label>Найзручніші періоди для занять</label>
+                  <select
+                    {...input}
+                    onChange={(event) => {
+                      meta.error && form.resetFieldState('preferredDayPeriod');
+                      input.onChange(event.target.value);
+                    }}
+                    className={styles.fieldInput}
+                  >
+                    {options.map((option: { text: string; value: string }) => (
+                      <option
+                        key={option.value}
+                        value={option.value}
+                        disabled={!option.value}
+                      >
+                        {option.text}
+                      </option>
+                    ))}
+                  </select>
                   {meta.error && meta.touched && (
                     <span className={styles.fieldError}>{meta.error}</span>
                   )}

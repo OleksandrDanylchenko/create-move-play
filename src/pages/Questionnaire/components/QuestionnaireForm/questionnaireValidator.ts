@@ -11,14 +11,21 @@ export const questionnaireSchema = Joi.object()
       .messages({
         'string.pattern.base':
           "Ім'я може містити лише буквено-цифрові значення",
-        'any.required': "Ім'я не може бути пустим"
+        'any.required': "Зазначте ваше ім'я"
       }),
     age: Joi.number().integer().min(4).max(120).required().messages({
       'number.base': `Вік може містити лише цілі числа`,
       'number.min': `Ви не можете бути молодші ніж {#limit} роки`,
       'number.max': `Ви не можете бути старші ніж {#limit} років`,
-      'any.required': `Вік не може бути пустим`
-    })
+      'any.required': `Зазначте ваш вік`
+    }),
+    preferredDayPeriod: Joi.string()
+      .valid('morningAndDinner', 'dinnerAndSupper')
+      .required()
+      .messages({
+        'any.only': `Обраний період поки недоступний`,
+        'any.required': `Зазначте найзручніший період`
+      })
   })
   .options({ abortEarly: false });
 

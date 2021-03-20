@@ -5,7 +5,7 @@ export interface IUserData {
   name: string;
   age: string;
   diseases: string;
-  preferredDatPeriod: string;
+  preferredDayPeriod: string;
 }
 
 const QuestionnaireContainer: FunctionComponent = () => {
