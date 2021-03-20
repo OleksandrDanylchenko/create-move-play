@@ -42,6 +42,10 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                   <input
                     {...input}
                     type={'text'}
+                    onChange={(event) => {
+                      meta.error && form.resetFieldState('name');
+                      input.onChange(event.target.value);
+                    }}
                     className={styles.fieldInput}
                   />
                   {meta.error && meta.touched && (
@@ -63,6 +67,10 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                   <input
                     {...input}
                     type={'number'}
+                    onChange={(event) => {
+                      meta.error && form.resetFieldState('age');
+                      input.onChange(event.target.value);
+                    }}
                     className={styles.fieldInput}
                   />
                   {meta.error && meta.touched && (
