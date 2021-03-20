@@ -10,5 +10,5 @@ export const preferableDayPeriodsOptions: ISelectOption[] = [
 
 export const diseasesOptions: ISelectOption[] = [
   { label: "М'язева дистрофія ніг", value: 'legsDystrophy' },
-  { label: 'Артеріальна гіпертензія', value: 'dinnerAndSupper' }
+  { label: 'Артеріальна гіпертензія', value: 'arteriesHypertensia' }
 ];
