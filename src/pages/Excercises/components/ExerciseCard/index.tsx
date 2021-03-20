@@ -1,8 +1,8 @@
 import { IExercise } from '../../../../redux/reducers/exercises';
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useCallback, useState } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { faDumbbell, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 
 interface ExerciseCard {
   exercise: IExercise;
@@ -12,6 +12,14 @@ type ExerciseCardProps = ExerciseCard;
 
 const ExerciseCard: FunctionComponent<ExerciseCardProps> = ({ exercise }) => {
   const [showDescription, setShowDescription] = useState(false);
+
+  const onExerciseSelection = useCallback(
+    (event) => {
+      event.stopPropagation();
+      alert(`Ви обрали вправу ${exercise.name}`);
+    },
+    [exercise.name]
+  );
 
   return (
     <article
@@ -50,9 +58,18 @@ const ExerciseCard: FunctionComponent<ExerciseCardProps> = ({ exercise }) => {
         />
       </div>
       {showDescription && (
-        <section className={styles.cardDescription}>
-          {exercise.shortDescription}
-        </section>
+        <>
+          <section className={styles.cardDescription}>
+            {exercise.shortDescription}
+          </section>
+          <button
+            onClick={onExerciseSelection}
+            className={styles.startExerciseButton}
+          >
+            Почати виконання
+            <FontAwesomeIcon icon={faDumbbell} />
+          </button>
+        </>
       )}
     </article>
   );

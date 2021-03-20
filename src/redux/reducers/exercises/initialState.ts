@@ -30,7 +30,7 @@ export const availableExercises: IExercise[] = [
       'https://www.fitstream.com/images/weight-training/exercises/barbell-bicep-curl.png',
     popularity: 84,
     shortDescription:
-      'Базова вправа для розвиває силу та збільшує розмір біцепсів.',
+      'Базова вправа для розвитку сили та збільшення розміру біцепсів.',
     primaryMuscle: 'Біцепс',
     secondaryMuscles: ['Передпліччя'],
     level: 'Початківець',
