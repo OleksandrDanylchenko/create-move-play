@@ -13,7 +13,7 @@ const ExercisesContainer: FunctionComponent<ExercisesContainerProps> = ({
   const [filteredExercises, setFilteredExercises] = useState<IExercise[]>([]);
 
   useEffect(() => {
-    console.log(exercises);
+    // TODO Add filtering for diseases
     setFilteredExercises(exercises);
   }, [exercises]);
 

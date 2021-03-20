@@ -1,5 +1,5 @@
 import { IExercise } from '../../../../redux/reducers/exercises';
-import React, { FunctionComponent, useCallback, useState } from 'react';
+import React, { FunctionComponent, useCallback, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -17,19 +17,34 @@ type ExerciseCardProps = ExerciseCard;
 const ExerciseCard: FunctionComponent<ExerciseCardProps> = ({ exercise }) => {
   const [showDescription, setShowDescription] = useState(false);
 
-  const onExerciseSelection = useCallback(
+  const onCardClick = useCallback(() => {
+    setShowDescription((prev) => !prev);
+  }, []);
+
+  const startExerciseButton = useRef<HTMLButtonElement | null>(null);
+  const onStartExerciseButtonCreation = useCallback(
+    (element: HTMLButtonElement) => {
+      startExerciseButton.current = element;
+      if (startExerciseButton.current) {
+        startExerciseButton.current.scrollIntoView({
+          block: 'end',
+          behavior: 'smooth'
+        });
+      }
+    },
+    []
+  );
+
+  const onStartExerciseClick = useCallback(
     (event) => {
       event.stopPropagation();
-      alert(`Ви обрали вправу ${exercise.name}`);
+      alert(`Ви обрали вправу: ${exercise.name}`);
     },
     [exercise.name]
   );
 
   return (
-    <article
-      className={styles.cardContainer}
-      onClick={() => setShowDescription((prev) => !prev)}
-    >
+    <article className={styles.cardContainer} onClick={onCardClick}>
       <img
         src={exercise.photoUrl}
         alt={exercise.name}
@@ -67,7 +82,8 @@ const ExerciseCard: FunctionComponent<ExerciseCardProps> = ({ exercise }) => {
             {exercise.shortDescription}
           </section>
           <button
-            onClick={onExerciseSelection}
+            onClick={onStartExerciseClick}
+            ref={onStartExerciseButtonCreation}
             className={styles.startExerciseButton}
           >
             Почати виконання
