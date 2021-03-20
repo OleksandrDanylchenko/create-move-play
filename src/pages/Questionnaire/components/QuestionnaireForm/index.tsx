@@ -144,9 +144,9 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                     onFocus={(event) => input.onFocus(event)}
                     onBlur={(event) => input.onBlur(event)}
                     onChange={(event) => {
-                      meta.error && form.resetFieldState('preferredDayPeriod');
-                      console.log(event);
-                      // input.onChange(event?.value);
+                      meta.error && form.resetFieldState('diseases');
+                      const values = event.map((selection) => selection.value);
+                      input.onChange(values);
                     }}
                     options={options}
                     className={styles.fieldInput}
