@@ -1,0 +1,18 @@
+@import "../../../styles/toRemConverter";
+
+.dimmer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: rem(40px);
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #00fecc, #00fad9, #00f5e4, #00f0ec, #2feaf2);
+}
+
+.suspenseText {
+  display: inline-block;
+  font-size: rem(25px);
+}
