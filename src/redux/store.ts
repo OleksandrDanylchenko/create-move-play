@@ -2,9 +2,8 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
-// import { env } from '../config/env';
-// import { persistStore, persistReducer } from 'redux-persist';
-// import { persistConfig } from './persistConfig';
+import { persistStore, persistReducer } from 'redux-persist';
+import { persistConfig } from './persistConfig';
 
 declare global {
   interface Window {
@@ -43,13 +42,13 @@ const composeEnhancers: Function = !isMobile
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // Add to store as first param instead of rootReducer if needed
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(
-  rootReducer,
+  persistedReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 sagaMiddleware.run(rootSaga);
