@@ -2,8 +2,18 @@ import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { IBindingCallback1 } from '../../../models/callbacks';
+import { IUserData } from '../QuestionnaireContainer';
 
-const QuestionnaireView: FunctionComponent = () => {
+interface QuestionnaireView {
+  onSubmit: IBindingCallback1<IUserData>;
+}
+
+type QuestionnaireViewProps = QuestionnaireView;
+
+const QuestionnaireView: FunctionComponent<QuestionnaireViewProps> = ({
+  onSubmit
+}) => {
   return (
     <div className={styles.container}>
       <article className={styles.info}>

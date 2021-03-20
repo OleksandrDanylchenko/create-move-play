@@ -4,7 +4,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import PublicRoute from './PublicRoute';
 import IntroView from '../pages/Intro';
 import { AnimatePresence } from 'framer-motion';
-import QuestionnaireView from '../pages/Questionnaire';
+import QuestionnaireContainer from '../pages/Questionnaire/QuestionnaireContainer';
 
 export const history = createBrowserHistory();
 
@@ -24,7 +24,7 @@ const Routing: FunctionComponent = () => {
           exact
           path="/questionnaire"
           title="Пройдіть опитування | Твори.Рухайся.Грай"
-          component={QuestionnaireView}
+          component={QuestionnaireContainer}
         />
         {/*<PublicRoute*/}
         {/*  exact*/}
