@@ -32,7 +32,11 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
           form
         }) => (
           <form onSubmit={handleSubmit}>
-            <Field<string> name={'name'}>
+            <Field<string>
+              name={'name'}
+              format={(value) => value.trim()}
+              formatOnBlur={true}
+            >
               {({ input, meta }) => (
                 <div
                   className={

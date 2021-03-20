@@ -6,11 +6,12 @@ import { validator } from '../../../../utils/forms-validation.helper';
 export const questionnaireSchema = Joi.object()
   .keys({
     name: Joi.string()
-      .regex(/^[а-яА-Яa-zA-Z0-9]+$/)
+      .regex(/^[а-яА-Яa-zA-Z0-9\s]+$/)
       .required()
       .messages({
         'string.pattern.base':
           "Ім'я може містити лише буквено-цифрові значення",
+        'string.empty': "Ім'я не може бути пустим",
         'any.required': "Зазначте ваше ім'я"
       }),
     age: Joi.number().integer().min(4).max(120).required().messages({
