@@ -1,10 +1,12 @@
 import { createBrowserHistory } from 'history';
 import React, { FunctionComponent } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import PublicRoute from './PublicRoute';
 import IntroView from '../pages/Intro';
 import { AnimatePresence } from 'framer-motion';
 import QuestionnaireContainer from '../pages/Questionnaire/QuestionnaireContainer';
+import AuthenticationRoute from './AuthenticationRoute';
+import ProtectedRoute from './ProtectedRoute';
+import HomeContainer from '../pages/Home/HomeContainer';
 
 export const history = createBrowserHistory();
 
@@ -14,24 +16,24 @@ const Routing: FunctionComponent = () => {
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.pathname}>
-        <PublicRoute
+        <AuthenticationRoute
           exact
           path="/intro"
           title="Привіт! | Твори.Рухайся.Грай"
           component={IntroView}
         />
-        <PublicRoute
+        <AuthenticationRoute
           exact
-          path="/user"
+          path="/questionnaire"
           title="Пройдіть опитування | Твори.Рухайся.Грай"
           component={QuestionnaireContainer}
         />
-        {/*<PublicRoute*/}
-        {/*  exact*/}
-        {/*  path="/"*/}
-        {/*  title="Твори.Рухайся.Грай"*/}
-        {/*  component={HomeContainer}*/}
-        {/*/>*/}
+        <ProtectedRoute
+          exact
+          path="/"
+          title="Твори.Рухайся.Грай"
+          component={HomeContainer}
+        />
         <Route path="/*">
           <Redirect to="/intro" />
         </Route>

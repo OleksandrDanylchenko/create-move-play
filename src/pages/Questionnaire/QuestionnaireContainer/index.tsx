@@ -1,13 +1,20 @@
-import React, { FunctionComponent, useCallback } from 'react';
+import React, { FunctionComponent } from 'react';
 import QuestionnaireView from '../QuestionnaireView';
 import { IUserAnswers } from '../../../redux/reducers/user';
+import { connect } from 'react-redux';
+import { IBindingCallback1 } from '../../../models/callbacks';
+import { saveUserAnswersRoutine } from '../../../redux/routines';
 
-const QuestionnaireContainer: FunctionComponent = () => {
-  const onSubmit = useCallback((data: IUserAnswers) => {
-    console.log(data);
-  }, []);
+type QuestionnaireContainerProps = typeof mapDispatchToProps;
 
-  return <QuestionnaireView onSubmit={onSubmit} />;
+const QuestionnaireContainer: FunctionComponent<QuestionnaireContainerProps> = ({
+  saveUserAnswers
+}) => {
+  return <QuestionnaireView onSubmit={saveUserAnswers} />;
 };
 
-export default QuestionnaireContainer;
+const mapDispatchToProps = {
+  saveUserAnswers: saveUserAnswersRoutine as IBindingCallback1<IUserAnswers>
+};
+
+export default connect(null, mapDispatchToProps)(QuestionnaireContainer);

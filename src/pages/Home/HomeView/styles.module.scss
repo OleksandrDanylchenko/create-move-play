@@ -1,0 +1,22 @@
+@import "../../../styles/toRemConverter";
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #00fecc, #00fad9, #00f5e4, #00f0ec, #2feaf2);
+  font-variation-settings: 'serf' 2;
+}
+
+.info {
+  padding: rem(30px) rem(20px);
+}
+
+.header {
+  font-size: rem(17px);
+
+  h1 {
+    margin-top: 0;
+    font-weight: 800;
+  }
+}
+

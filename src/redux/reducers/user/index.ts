@@ -1,4 +1,5 @@
 import { Routine } from 'redux-saga-routines';
+import { saveUserAnswersRoutine } from '../../routines';
 
 export interface IUserAnswers {
   name: string;
@@ -20,6 +21,11 @@ export const user = (
   action: Routine<any>
 ): IUserState => {
   switch (action.type) {
+    case saveUserAnswersRoutine.SUCCESS:
+      return {
+        ...state,
+        userAnswers: action.payload
+      };
     default:
       return state;
   }

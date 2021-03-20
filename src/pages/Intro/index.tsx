@@ -49,7 +49,7 @@ const IntroView: FunctionComponent = () => {
             виконуй вправи та вигравай цінні призи
           </p>
         </motion.section>
-        <Link to={'/user'} className={styles.questionnaireButtonLink}>
+        <Link to={'/questionnaire'} className={styles.questionnaireButtonLink}>
           <motion.button
             initial={'initial'}
             animate={'in'}
