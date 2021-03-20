@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { IExercise } from '../../../redux/reducers/exercises';
+import ExerciseCard from '../components/ExerciseCard';
 
 interface ExercisesView {
   exercises: IExercise[];
@@ -17,8 +18,10 @@ const ExercisesView: FunctionComponent<ExercisesViewProps> = ({
         <header className={styles.header}>
           <h1>Оберіть бажану вправу:</h1>
         </header>
-        <section>
-          <pre>{JSON.stringify(exercises, null, 2)}</pre>
+        <section className={styles.exercisesList}>
+          {exercises.map((exercise, index) => (
+            <ExerciseCard key={index} exercise={exercise} />
+          ))}
         </section>
       </article>
     </div>

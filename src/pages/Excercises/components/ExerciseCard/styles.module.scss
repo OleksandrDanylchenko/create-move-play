@@ -1,0 +1,94 @@
+@import "../../../../styles/toRemConverter";
+
+.cardContainer {
+  position: relative;
+  width: 100%;
+  padding: rem(20px);
+  border-top: black solid rem(1px);
+  border-bottom: black solid rem(1px);
+  border-radius: rem(7px);
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: rem(180px);
+  object-fit: contain;
+}
+
+.cardName {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: rem(22px);
+  font-weight: 650;
+}
+
+.cardPopularity {
+  margin-top: rem(3px);
+  font-size: rem(13px);
+  font-weight: 300;
+  color: #504E4E;
+}
+
+.cardMainMuscles {
+  margin-top: rem(-10px);
+  color: #504E4E;
+  font-weight: 360;
+
+  & > span {
+    font-size: rem(19px);
+    font-weight: 400;
+    color: black;
+  }
+}
+
+.cardSecondaryMuscles {
+  margin-top: rem(10px);
+  color: #504E4E;
+  font-weight: 360;
+  line-height: rem(20px);
+
+  & > span {
+    color: black;
+  }
+}
+
+.cardLevel {
+  margin-top: rem(10px);
+  color: #504E4E;
+  font-weight: 360;
+  line-height: rem(20px);
+
+  & > span {
+    color: black;
+  }
+}
+
+.expansionStrip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: rem(10px);
+  background: black;
+}
+
+.expansionIcon {
+  color: #00F0EC;
+
+  &Down {
+    @extend .expansionIcon;
+    margin-top: rem(-6px);
+  }
+
+  &Up {
+    @extend .expansionIcon;
+    margin-top: rem(1px);
+  }
+}
+
+.cardDescription {
+  margin-top: rem(10px);
+}

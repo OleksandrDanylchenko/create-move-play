@@ -9,8 +9,8 @@ export const availableExercises: IExercise[] = [
     shortDescription:
       "Базова фізична вправа, що розвиває великий грудний м'яз і трицепс. Також при виконанні вправи залучені передні дельтоподібні м'язи, ліктьовий м'яз та плечовий пояс в цілому.",
     primaryMuscle: 'Грудні',
-    secondaryMuscles: ['Лікті, Тріцепс'],
-    level: 'beginner',
+    secondaryMuscles: ['Лікті', 'Тріцепс'],
+    level: 'Початківець',
     incompatibleDiseases: ['legsDystrophy']
   },
   {
@@ -21,7 +21,7 @@ export const availableExercises: IExercise[] = [
     shortDescription: "Класична вправа для розвитку сили черевних м'язів",
     primaryMuscle: 'Черевні',
     secondaryMuscles: [],
-    level: 'beginner',
+    level: 'Початківець',
     incompatibleDiseases: ['arteriesHypertensia']
   },
   {
@@ -33,7 +33,7 @@ export const availableExercises: IExercise[] = [
       'Базова вправа для розвиває силу та збільшує розмір біцепсів.',
     primaryMuscle: 'Біцепс',
     secondaryMuscles: ['Передпліччя'],
-    level: 'beginner',
+    level: 'Початківець',
     incompatibleDiseases: []
   },
   {
@@ -50,7 +50,7 @@ export const availableExercises: IExercise[] = [
       'Підколінні сухожилля',
       'Квадрицепси'
     ],
-    level: 'intermediate',
+    level: 'Досвідчений',
     incompatibleDiseases: ['arteriesHypertensia', 'legsDystrophy']
   }
 ];
