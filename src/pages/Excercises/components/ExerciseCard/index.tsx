@@ -2,7 +2,11 @@ import { IExercise } from '../../../../redux/reducers/exercises';
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDumbbell, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDumbbell,
+  faSortDown,
+  faSortUp
+} from '@fortawesome/free-solid-svg-icons';
 
 interface ExerciseCard {
   exercise: IExercise;

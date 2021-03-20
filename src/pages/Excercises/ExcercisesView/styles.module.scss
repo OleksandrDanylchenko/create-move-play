@@ -8,14 +8,26 @@
 }
 
 .info {
-  padding: rem(30px) rem(20px);
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
 }
 
 .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  padding: rem(7px);
+  border-bottom-left-radius: rem(10px);
+  border-bottom-right-radius: rem(10px);
+  background: #00F9C9;
+  z-index: 1;
   font-size: rem(12px);
 
   h1 {
     margin-top: 0;
+    margin-bottom: 0;
     font-weight: 800;
   }
 }
@@ -25,4 +37,6 @@
   align-items: center;
   flex-direction: column;
   gap: rem(35px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
 }
