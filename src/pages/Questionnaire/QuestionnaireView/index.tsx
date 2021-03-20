@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { IBindingCallback1 } from '../../../models/callbacks';
 import { IUserData } from '../QuestionnaireContainer';
-import QuestionnaireForm from '../components/QuestionnaireForm';
+import QuestionnaireFormView from '../components/QuestionnaireForm';
 
 interface QuestionnaireView {
   onSubmit: IBindingCallback1<IUserData>;
@@ -20,7 +20,7 @@ const QuestionnaireView: FunctionComponent<QuestionnaireViewProps> = ({
           <h1>Пройдіть коротке опитування:</h1>
         </header>
         <section>
-          <QuestionnaireForm onSubmit={onSubmit} />
+          <QuestionnaireFormView onSubmit={onSubmit} />
         </section>
       </article>
     </div>
