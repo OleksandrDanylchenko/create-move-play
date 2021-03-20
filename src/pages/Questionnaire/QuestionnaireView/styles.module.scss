@@ -1,15 +1,13 @@
 @import "../../../styles/toRemConverter";
 
 .container {
-  height: 100vh;
+  height: auto;
   background-image: linear-gradient(to bottom, #00fecc, #00fad9, #00f5e4, #00f0ec, #2feaf2);
   font-variation-settings: 'serf' 2;
 }
 
 .info {
-  padding-top: rem(30px);
-  padding-left: rem(20px);
-  padding-right: rem(20px);
+  padding: rem(30px) rem(20px);
 }
 
 .header {
