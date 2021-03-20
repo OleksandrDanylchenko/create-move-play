@@ -58,7 +58,7 @@ const IntroView: FunctionComponent = () => {
             variants={introButtonVariants}
             className={styles.joinButton}
           >
-            Приєднатися
+            Пройти опитування
             <FontAwesomeIcon icon={faChevronCircleRight} />
           </motion.button>
         </Link>
