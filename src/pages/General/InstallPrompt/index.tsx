@@ -5,20 +5,20 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { usePromptToInstall } from '../../../hooks/usePromptToInstall';
 
 const InstallPromp: FunctionComponent = () => {
-  const { deferredEvt } = usePromptToInstall();
+  // const { deferredEvt } = usePromptToInstall();
 
-  alert(deferredEvt?.prompt);
+  // alert(deferredEvt?.prompt);
 
   return (
     <>
-      {deferredEvt && (
-        <div className={styles.promptContainer} onClick={deferredEvt.prompt}>
-          <div>Хотіли б встановити наш додаток для доступу в офлайні?</div>
-          <div className={styles.promptIcons}>
-            <FontAwesomeIcon icon={faDownload} size={'lg'} />
-          </div>
-        </div>
-      )}
+      {/*{deferredEvt && (*/}
+      {/*  <div className={styles.promptContainer} onClick={deferredEvt?.prompt}>*/}
+      {/*    <div>Хотіли б встановити наш додаток для доступу в офлайні?</div>*/}
+      {/*    <div className={styles.promptIcons}>*/}
+      {/*      <FontAwesomeIcon icon={faDownload} size={'lg'} />*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </>
   );
 };
