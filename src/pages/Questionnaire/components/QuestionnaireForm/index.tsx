@@ -45,8 +45,14 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                       : styles.formField
                   }
                 >
-                  <label className={styles.fieldLabel}>Ім&apos;я</label>
+                  <label
+                    htmlFor={'questionnaire-form-name'}
+                    className={styles.fieldLabel}
+                  >
+                    Ім&apos;я
+                  </label>
                   <input
+                    id={'questionnaire-form-name'}
                     {...input}
                     type={'text'}
                     onChange={(event) => {
@@ -70,9 +76,15 @@ const QuestionnaireFormView: FunctionComponent<QuestionnaireFormProps> = ({
                       : styles.formField
                   }
                 >
-                  <label className={styles.fieldLabel}>Вік</label>
+                  <label
+                    htmlFor={'questionnaire-form-age'}
+                    className={styles.fieldLabel}
+                  >
+                    Вік
+                  </label>
                   <input
                     {...input}
+                    id={'questionnaire-form-age'}
                     type={'number'}
                     onChange={(event) => {
                       meta.error && form.resetFieldState('age');
