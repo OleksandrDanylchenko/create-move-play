@@ -16,7 +16,7 @@ const ExercisesView: FunctionComponent<ExercisesViewProps> = ({
     <div className={styles.container}>
       <article className={styles.info}>
         <header className={styles.header}>
-          <h1>Оберіть бажану вправу:</h1>
+          <h1>Обери бажану вправу:</h1>
         </header>
         <section className={styles.exercisesList}>
           {exercises.map((exercise, index) => (

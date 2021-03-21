@@ -7,16 +7,25 @@
   font-variation-settings: 'serf' 2;
 }
 
-.info {
-  padding: rem(30px) rem(20px);
-}
-
 .header {
-  font-size: rem(17px);
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+  padding: rem(18px);
+  border-bottom: black solid rem(2px);
+  border-radius: rem(7px);
 
-  h1 {
+  .headerGreeting {
     margin-top: 0;
+    margin-bottom: 0;
+    font-size: rem(18px);
     font-weight: 800;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .headerSettings {
+    justify-self: end;
   }
 }
 
