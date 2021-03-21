@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import IntroInstallPromp from '../components/IntroInstallPrompt';
+import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
 
 const IntroView: FunctionComponent = () => {
   return (
@@ -31,7 +32,9 @@ const IntroView: FunctionComponent = () => {
             <FontAwesomeIcon icon={faChevronCircleRight} />
           </button>
         </Link>
-        <IntroInstallPromp />
+        <PromptToInstallProvider>
+          <IntroInstallPromp />
+        </PromptToInstallProvider>
       </article>
     </div>
   );
