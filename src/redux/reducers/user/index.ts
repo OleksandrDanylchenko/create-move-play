@@ -32,7 +32,7 @@ export const user = (
     case clearUserAnswersRoutine.SUCCESS:
       return {
         ...state,
-        userAnswers: action.payload
+        userAnswers: undefined
       };
     default:
       return state;

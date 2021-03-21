@@ -1,0 +1,7 @@
+.tippy-box {
+  background-color: #E4572E;
+
+  & > .tippy-arrow::before {
+    border-bottom-color: #E4572E !important;
+  }
+}

@@ -17,10 +17,10 @@ function* saveUserAnswersSaga({ payload }: Routine<any>) {
 
 function* clearUserAnswersSaga({ payload }: Routine<any>) {
   try {
-    yield* put(saveUserAnswersRoutine.success(payload));
+    yield* put(clearUserAnswersRoutine.success(payload));
   } catch (error) {
     log.error(error);
-    yield* put(saveUserAnswersRoutine.failure(error));
+    yield* put(clearUserAnswersRoutine.failure(error));
   }
 }
 

@@ -1,0 +1,13 @@
+@import "../../../../../../../styles/toRemConverter";
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(10px);
+  color: #E4572E;
+}
+
+.clearConfirmation {
+  color: #E4572E;
+}
