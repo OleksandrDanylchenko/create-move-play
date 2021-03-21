@@ -14,4 +14,6 @@
   border: solid black rem(2px);
   border-radius: rem(10px);
   color: black;
+  cursor: pointer;
+  user-select: none;
 }

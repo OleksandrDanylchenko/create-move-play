@@ -38,8 +38,8 @@ export function PromptToInstallProvider(props: Children) {
     const ready = (e: IBeforeInstallPromptEvent) => {
       e.preventDefault();
 
-      // eslint-disable-next-line no-debugger
-      debugger;
+      console.error(e);
+
       setDeferredEvt(e);
     };
 
