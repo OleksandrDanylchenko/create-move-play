@@ -7,6 +7,8 @@ import { usePromptToInstall } from '../../../hooks/usePromptToInstall';
 const InstallPromp: FunctionComponent = () => {
   const { deferredEvt } = usePromptToInstall();
 
+  alert(deferredEvt?.prompt);
+
   return (
     <>
       {deferredEvt && (

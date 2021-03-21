@@ -37,9 +37,6 @@ export function PromptToInstallProvider(props: Children) {
   useEffect(() => {
     const ready = (e: IBeforeInstallPromptEvent) => {
       e.preventDefault();
-
-      alert(e.prompt);
-
       setDeferredEvt(e);
     };
 
