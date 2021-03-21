@@ -1,12 +1,12 @@
 import { createBrowserHistory } from 'history';
 import React, { FunctionComponent } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import IntroView from '../pages/Intro';
 import { AnimatePresence } from 'framer-motion';
 import QuestionnaireContainer from '../pages/Questionnaire/QuestionnaireContainer';
 import AuthenticationRoute from './AuthenticationRoute';
 import ProtectedRoute from './ProtectedRoute';
 import HomeContainer from '../pages/Home/HomeContainer';
+import IntroView from '../pages/Intro/IntroView';
 
 export const history = createBrowserHistory();
 

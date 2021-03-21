@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-interface IPublicRoute {
+interface PublicRoute {
   component: React.ElementType;
   path: string;
   title?: string;
   exact?: boolean;
 }
 
-type PublicRouteProps = IPublicRoute;
+type PublicRouteProps = PublicRoute;
 
 const PublicRoute: React.FunctionComponent<PublicRouteProps> = ({
   component: Component,

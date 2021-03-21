@@ -6,8 +6,12 @@
   justify-content: space-between;
   gap: rem(10px);
   color: #E4572E;
+  cursor: pointer;
+  user-select: none;
 }
 
 .clearConfirmation {
   color: #E4572E;
+  cursor: pointer;
+  user-select: none;
 }

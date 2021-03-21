@@ -1,6 +1,8 @@
-@import "../../styles/toRemConverter";
+@import "../../../styles/toRemConverter";
 
 .container {
+  display: flex;
+  justify-content: center;
   height: 100%;
   min-height: 100vh;
   background-image: linear-gradient(to right bottom, #00fecc, #00fad9, #00f5e4, #00f0ec, #2feaf2);
@@ -9,6 +11,7 @@
 
 .info {
   padding: rem(40px);
+  max-width: rem(500px);
 }
 
 .header {
@@ -35,7 +38,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: rem(500px);
   padding: rem(16px);
   margin-top: rem(50px);
   font-size: rem(25px);

@@ -3,16 +3,16 @@ import { Redirect, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { IState } from '../../redux/state';
 
-interface IPublicRoute {
+interface ProtectedRoute {
   component: React.ElementType;
   path: string;
   title?: string;
   exact?: boolean;
 }
 
-type PublicRouteProps = IPublicRoute & ReturnType<typeof mapStateToProps>;
+type ProtectedRouteProps = ProtectedRoute & ReturnType<typeof mapStateToProps>;
 
-const ProtectedRoute: React.FunctionComponent<PublicRouteProps> = ({
+const ProtectedRoute: React.FunctionComponent<ProtectedRouteProps> = ({
   component: Component,
   title,
   path,
