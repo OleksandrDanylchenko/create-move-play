@@ -26,11 +26,11 @@ const HomeView: FunctionComponent<HomeViewProps> = ({ userAnswers }) => {
           </div>
         </header>
         <section>
-          <PromptToInstallProvider>
-            <div className={styles.installPrompt}>
-              <InstallPromp />
-            </div>
-          </PromptToInstallProvider>
+          {/*<PromptToInstallProvider>*/}
+          {/*  <div className={styles.installPrompt}>*/}
+          {/*    <InstallPromp />*/}
+          {/*  </div>*/}
+          {/*</PromptToInstallProvider>*/}
           <ExercisesContainer />
         </section>
       </article>

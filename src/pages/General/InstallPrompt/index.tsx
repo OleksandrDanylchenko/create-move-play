@@ -12,7 +12,7 @@ const InstallPromp: FunctionComponent = () => {
   return (
     <>
       {deferredEvt && (
-        <div className={styles.promptContainer} onClick={deferredEvt?.prompt}>
+        <div className={styles.promptContainer} onClick={deferredEvt.prompt}>
           <div>Хотіли б встановити наш додаток для доступу в офлайні?</div>
           <div className={styles.promptIcons}>
             <FontAwesomeIcon icon={faDownload} size={'lg'} />

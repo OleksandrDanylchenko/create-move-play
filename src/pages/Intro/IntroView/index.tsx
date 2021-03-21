@@ -32,9 +32,9 @@ const IntroView: FunctionComponent = () => {
             <FontAwesomeIcon icon={faChevronCircleRight} />
           </button>
         </Link>
-        <PromptToInstallProvider>
-          <InstallPromp />
-        </PromptToInstallProvider>
+        {/*<PromptToInstallProvider>*/}
+        {/*  <InstallPromp />*/}
+        {/*</PromptToInstallProvider>*/}
       </article>
     </div>
   );
