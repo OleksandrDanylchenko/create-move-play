@@ -3,8 +3,8 @@ import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
-import InstallPromp from '../../General/InstallPrompt';
+// import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
+// import InstallPromp from '../../General/InstallPrompt';
 
 const IntroView: FunctionComponent = () => {
   return (

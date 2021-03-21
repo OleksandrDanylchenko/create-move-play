@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { usePromptToInstall } from '../../../hooks/usePromptToInstall';
+// import { usePromptToInstall } from '../../../hooks/usePromptToInstall';
 
 const InstallPromp: FunctionComponent = () => {
   // const { deferredEvt } = usePromptToInstall();

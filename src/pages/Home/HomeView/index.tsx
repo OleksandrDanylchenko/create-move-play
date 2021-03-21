@@ -3,8 +3,8 @@ import styles from './styles.module.scss';
 import { IUserAnswers } from '../../../redux/reducers/user';
 import ExercisesContainer from '../../Excercises/ExcercisesContainer';
 import SettingsButtonMenuView from '../components/SettingsButtonMenu/SettingsButtonMenuView';
-import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
-import InstallPromp from '../../General/InstallPrompt';
+// import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
+// import InstallPromp from '../../General/InstallPrompt';
 
 interface HomeView {
   userAnswers: IUserAnswers;
