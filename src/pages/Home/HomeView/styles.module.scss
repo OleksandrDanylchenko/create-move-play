@@ -9,6 +9,10 @@
   font-variation-settings: 'serf' 2;
 }
 
+.info {
+  max-width: rem(500px);
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr min-content;
@@ -31,3 +35,8 @@
   }
 }
 
+.installPrompt {
+  margin-top: rem(-10px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+}

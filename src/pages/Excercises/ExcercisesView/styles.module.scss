@@ -3,7 +3,6 @@
 .container {
   height: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, #00fecc, #00f0c1, #00e1b5, #00d3aa, #00c59f, #00bc98, #00b491, #00ab8a, #00a585, #009f80, #009a7c, #009477);
   font-variation-settings: 'serf' 2;
 }
 
@@ -21,12 +20,12 @@
   padding: rem(7px);
   border-bottom-left-radius: rem(10px);
   border-bottom-right-radius: rem(10px);
-  background: #00F9C9;
+  background: #00FAD6;
   z-index: 1;
   font-size: rem(12px);
 
   h1 {
-    margin-top: 0;
+    margin-top: rem(10px);
     margin-bottom: 0;
     font-weight: 800;
   }
