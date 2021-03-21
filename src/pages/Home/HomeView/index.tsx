@@ -4,7 +4,7 @@ import { IUserAnswers } from '../../../redux/reducers/user';
 import ExercisesContainer from '../../Excercises/ExcercisesContainer';
 import SettingsButtonMenuView from '../components/SettingsButtonMenu/SettingsButtonMenuView';
 import { PromptToInstallProvider } from '../../../hooks/usePromptToInstall';
-import IntroInstallPromp from '../../Intro/components/IntroInstallPrompt';
+import InstallPromp from '../../General/InstallPrompt';
 
 interface HomeView {
   userAnswers: IUserAnswers;
@@ -28,7 +28,7 @@ const HomeView: FunctionComponent<HomeViewProps> = ({ userAnswers }) => {
         <section>
           <PromptToInstallProvider>
             <div className={styles.installPrompt}>
-              <IntroInstallPromp />
+              <InstallPromp />
             </div>
           </PromptToInstallProvider>
           <ExercisesContainer />
